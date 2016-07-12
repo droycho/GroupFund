@@ -5,11 +5,11 @@ import android.os.Bundle;
 
 import com.epicodus.groupfund.R;
 
-public class HomeActivity extends AppCompatActivity {
+public class NewEventActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_new_event);
     }
 }

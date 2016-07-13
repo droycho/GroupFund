@@ -69,12 +69,30 @@
         android:layout_centerHorizontal="true"
         android:hint="Description/Plan" />
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:id="@+id/totalCostEditText"
+        android:layout_below="@+id/descriptionEditText"
+        android:layout_centerHorizontal="true"
+        android:hint="Estimated Total Cost" />
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Next Step"
-        android:id="@+id/NextStepButton"
-        android:layout_below="@+id/descriptionEditText"
+        android:id="@+id/nextStepButton"
+        android:layout_below="@+id/totalCostEditText"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Home"
+        android:id="@+id/newEventToHomeButton"
+        android:layout_below="@+id/nextStepButton"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

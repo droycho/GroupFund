@@ -15,18 +15,17 @@ public class NewEventActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        SubmitFormButton
         setContentView(R.layout.activity_new_event);
+//        SubmitFormButton
         mNextStepButton = (Button) findViewById(R.id.nextStepButton);
         mNextStepButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(NewEventActivity.this, HomeActivity.class);
+                Intent intent = new Intent(NewEventActivity.this, InviteActivity.class);
                 startActivity(intent);
             }
         });
 //        GoHomeFromNewEventFormButton
-        setContentView(R.layout.activity_new_event);
         mNewEventToHomeButton = (Button) findViewById(R.id.newEventToHomeButton);
         mNewEventToHomeButton.setOnClickListener(new View.OnClickListener() {
             @Override

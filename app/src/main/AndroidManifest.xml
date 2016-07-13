@@ -16,8 +16,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.HomeActivity" />
-        <activity android:name=".ui.NewEventActivity" />
-        <activity android:name=".ui.InviteActivity"></activity>
+        <activity android:name=".ui.NewEventTitleActivity" />
+        <activity android:name=".ui.InviteActivity" />
+        <activity android:name=".ui.NewEventStartDateActivity"></activity>
     </application>
 
 </manifest>

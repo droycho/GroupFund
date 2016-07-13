@@ -8,7 +8,7 @@ import android.widget.Button;
 
 import com.epicodus.groupfund.R;
 
-public class NewEventActivity extends AppCompatActivity {
+public class NewEventTitleActivity extends AppCompatActivity {
     private Button mNextStepButton;
     private Button mNewEventToHomeButton;
 
@@ -21,7 +21,7 @@ public class NewEventActivity extends AppCompatActivity {
         mNextStepButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(NewEventActivity.this, InviteActivity.class);
+                Intent intent = new Intent(NewEventTitleActivity.this, InviteActivity.class);
                 startActivity(intent);
             }
         });
@@ -30,7 +30,7 @@ public class NewEventActivity extends AppCompatActivity {
         mNewEventToHomeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(NewEventActivity.this, HomeActivity.class);
+                Intent intent = new Intent(NewEventTitleActivity.this, HomeActivity.class);
                 startActivity(intent);
             }
         });

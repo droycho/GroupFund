@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.epicodus.groupfund.ui.NewEventActivity">
+    tools:context=".ui.NewEventTitleActivity">
 
     <TextView
         android:layout_width="wrap_content"
@@ -92,7 +92,8 @@
         android:layout_height="wrap_content"
         android:text="Home"
         android:id="@+id/newEventToHomeButton"
-        android:layout_below="@+id/nextStepButton"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

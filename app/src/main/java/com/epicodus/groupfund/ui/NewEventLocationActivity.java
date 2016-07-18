@@ -13,7 +13,7 @@ import com.epicodus.groupfund.R;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class NewEventLocationActivity extends AppCompatActivity {
+public class NewEventLocationActivity extends AppCompatActivity implements View.OnClickListener {
     public static final String TAG = NewEventLocationActivity.class.getSimpleName();
     @Bind(R.id.newLocationToNewDescriptionButton) Button mNewLocationToNewDescriptionButton;
     @Bind(R.id.newLocationEditText) EditText mNewLocationEditText;
@@ -29,17 +29,17 @@ public class NewEventLocationActivity extends AppCompatActivity {
         String startDate = intent.getStringExtra("startDate");
         String endDate = intent.getStringExtra("endDate");
 //        NewEventLocationInputField
-//        mNewLocationEditText = (EditText) findViewById(R.id.newLocationEditText);
-//        NextStepButton
-        mNewLocationToNewDescriptionButton.setOnClickListener(new View.OnClickListener() {
+        mNewLocationToNewDescriptionButton.setOnClickListener(this);
+    }
             @Override
             public void onClick(View view) {
+//        NextStepButton
+                if(view == mNewLocationToNewDescriptionButton) {
                 String location = mNewLocationEditText.getText().toString();
                 Log.d(TAG, location);
                 Intent intent = new Intent(NewEventLocationActivity.this, NewEventDescriptionActivity.class);
                 intent.putExtra("location", location);
                 startActivity(intent);
             }
-        });
+        }
     }
-}

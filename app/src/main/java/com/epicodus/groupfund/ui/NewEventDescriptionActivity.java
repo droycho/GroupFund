@@ -13,7 +13,7 @@ import com.epicodus.groupfund.R;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class NewEventDescriptionActivity extends AppCompatActivity {
+public class NewEventDescriptionActivity extends AppCompatActivity implements View.OnClickListener {
     public static final String TAG = NewEventDescriptionActivity.class.getSimpleName();
     @Bind(R.id.newDescriptionToNewTotalCostButton) Button mNewDescriptionToNewTotalCostButton;
     @Bind(R.id.newDescriptionEditText) EditText mNewDescriptionEditText;
@@ -30,17 +30,17 @@ public class NewEventDescriptionActivity extends AppCompatActivity {
         String endDate = intent.getStringExtra("endDate");
         String location = intent.getStringExtra("location");
 //        NewEventDescriptionInputField
-//        mNewDescriptionEditText = (EditText) findViewById(R.id.newDescriptionEditText);
-//        NextStepButton
-        mNewDescriptionToNewTotalCostButton.setOnClickListener(new View.OnClickListener() {
+        mNewDescriptionToNewTotalCostButton.setOnClickListener(this);
+    }
             @Override
             public void onClick(View view) {
+//        NextStepButton
+                if(view == mNewDescriptionToNewTotalCostButton) {
                 String description = mNewDescriptionEditText.getText().toString();
                 Log.d(TAG, description);
                 Intent intent = new Intent(NewEventDescriptionActivity.this, NewEventTotalCostActivity.class);
                 intent.putExtra("description", description);
                 startActivity(intent);
             }
-        });
+        }
     }
-}

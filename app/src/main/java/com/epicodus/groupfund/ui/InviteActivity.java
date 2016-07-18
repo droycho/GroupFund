@@ -11,7 +11,7 @@ import com.epicodus.groupfund.R;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class InviteActivity extends AppCompatActivity {
+public class InviteActivity extends AppCompatActivity implements View.OnClickListener {
     @Bind(R.id.confirmButton) Button mConfirmButton;
 
     @Override
@@ -20,12 +20,13 @@ public class InviteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_invite);
         ButterKnife.bind(this);
 //        ConfirmButton
-        mConfirmButton.setOnClickListener(new View.OnClickListener() {
+        mConfirmButton.setOnClickListener(this);
+    }
             @Override
             public void onClick(View view) {
+                if(view == mConfirmButton) {
                 Intent intent = new Intent(InviteActivity.this, HomeActivity.class);
                 startActivity(intent);
             }
-        });
+        }
     }
-}

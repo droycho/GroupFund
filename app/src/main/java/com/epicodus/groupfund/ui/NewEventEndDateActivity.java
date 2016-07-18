@@ -13,7 +13,7 @@ import com.epicodus.groupfund.R;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class NewEventEndDateActivity extends AppCompatActivity {
+public class NewEventEndDateActivity extends AppCompatActivity implements View.OnClickListener {
     public static final String TAG = NewEventEndDateActivity.class.getSimpleName();
     @Bind(R.id.newEndDateToNewLocationButton) Button mNewEndDateToNewLocationButton;
     @Bind(R.id.newEndDateEditText) EditText mNewEndDateEditText;
@@ -28,17 +28,18 @@ public class NewEventEndDateActivity extends AppCompatActivity {
         String title = intent.getStringExtra("title");
         String startDate = intent.getStringExtra("startDate");
 //        NewEventEndDateInputField
-//        mNewEndDateEditText = (EditText) findViewById(R.id.newEndDateEditText);
-//        NextStepButton
-        mNewEndDateToNewLocationButton.setOnClickListener(new View.OnClickListener() {
+        mNewEndDateToNewLocationButton.setOnClickListener(this);
+    }
             @Override
             public void onClick(View view) {
+//        NextStepButton
+                if(view == mNewEndDateToNewLocationButton) {
                 String endDate = mNewEndDateEditText.getText().toString();
                 Log.d(TAG, endDate);
                 Intent intent = new Intent(NewEventEndDateActivity.this, NewEventLocationActivity.class);
                 intent.putExtra("endDate", endDate);
                 startActivity(intent);
             }
-        });
+        }
     }
-}
+

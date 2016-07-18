@@ -12,7 +12,7 @@ import com.epicodus.groupfund.R;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class NewEventTitleActivity extends AppCompatActivity {
+public class NewEventTitleActivity extends AppCompatActivity implements View.OnClickListener {
     @Bind(R.id.newTitleToNewStartDateButton) Button mNewTitleToNewStartDateButton;
     @Bind(R.id.newEventToHomeButton) Button mNewEventToHomeButton;
     @Bind(R.id.newTitleEditText) EditText mNewTitleEditText;
@@ -23,25 +23,23 @@ public class NewEventTitleActivity extends AppCompatActivity {
         setContentView(R.layout.activity_new_event_title);
         ButterKnife.bind(this);
 //        NewEventTitleInputField
-//        mNewTitleEditText = (EditText) findViewById(R.id.newTitleEditText);
-//        NextStepButton
-        mNewTitleToNewStartDateButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String title = mNewTitleEditText.getText().toString();
-                Intent intent = new Intent(NewEventTitleActivity.this, NewEventStartDateActivity.class);
-                intent.putExtra("title", title);
-                startActivity(intent);
-            }
-        });
-//        GoHomeFromNewEventFormButton
-        mNewEventToHomeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(NewEventTitleActivity.this, HomeActivity.class);
-                startActivity(intent);
-            }
-        });
-
+        mNewTitleToNewStartDateButton.setOnClickListener(this);
+        mNewEventToHomeButton.setOnClickListener(this);
     }
-}
+            @Override
+            public void onClick(View view) {
+//        NextStepButton
+                if (view == mNewTitleToNewStartDateButton) {
+                    String title = mNewTitleEditText.getText().toString();
+                    Intent intent = new Intent(NewEventTitleActivity.this, NewEventStartDateActivity.class);
+                    intent.putExtra("title", title);
+                    startActivity(intent);
+                }
+//        GoHomeFromNewEventFormButton
+                if (view == mNewEventToHomeButton) {
+                    Intent intent = new Intent(NewEventTitleActivity.this, HomeActivity.class);
+                    startActivity(intent);
+                }
+            }
+    }
+

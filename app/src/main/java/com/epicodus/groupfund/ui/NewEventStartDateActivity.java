@@ -12,7 +12,7 @@ import com.epicodus.groupfund.R;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class NewEventStartDateActivity extends AppCompatActivity {
+public class NewEventStartDateActivity extends AppCompatActivity implements View.OnClickListener {
     @Bind(R.id.newStartDateToNewEndDateButton) Button mNewStartDateToNewEndDateButton;
     @Bind(R.id.newStartDateEditText) EditText mNewStartDateEditText;
 
@@ -25,17 +25,17 @@ public class NewEventStartDateActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String title = intent.getStringExtra("title");
 //        NewEventStartDateInputField
-//        mNewStartDateEditText = (EditText) findViewById(R.id.newStartDateEditText);
-//        NextStepButton
-        mNewStartDateToNewEndDateButton.setOnClickListener(new View.OnClickListener() {
+        mNewStartDateToNewEndDateButton.setOnClickListener(this);
+    }
             @Override
             public void onClick(View view) {
-                String startDate = mNewStartDateEditText.getText().toString();
-                Intent intent = new Intent(NewEventStartDateActivity.this, NewEventEndDateActivity.class);
-                intent.putExtra("startDate", startDate);
-                startActivity(intent);
+//        NextStepButton
+                if (view == mNewStartDateToNewEndDateButton) {
+                    String startDate = mNewStartDateEditText.getText().toString();
+                    Intent intent = new Intent(NewEventStartDateActivity.this, NewEventEndDateActivity.class);
+                    intent.putExtra("startDate", startDate);
+                    startActivity(intent);
+                }
             }
-        });
-
     }
-}
+

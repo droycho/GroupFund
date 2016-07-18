@@ -10,24 +10,27 @@ import android.widget.EditText;
 
 import com.epicodus.groupfund.R;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 public class NewEventLocationActivity extends AppCompatActivity {
     public static final String TAG = NewEventLocationActivity.class.getSimpleName();
-    private Button mNewLocationToNewDescriptionButton;
-    private EditText mNewLocationEditText;
+    @Bind(R.id.newLocationToNewDescriptionButton) Button mNewLocationToNewDescriptionButton;
+    @Bind(R.id.newLocationEditText) EditText mNewLocationEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_event_location);
+        ButterKnife.bind(this);
 //        GetDataFromNewTitleAndNewStartDateAndNewEndDate
         Intent intent = getIntent();
         String title = intent.getStringExtra("title");
         String startDate = intent.getStringExtra("startDate");
         String endDate = intent.getStringExtra("endDate");
 //        NewEventLocationInputField
-        mNewLocationEditText = (EditText) findViewById(R.id.newLocationEditText);
+//        mNewLocationEditText = (EditText) findViewById(R.id.newLocationEditText);
 //        NextStepButton
-        mNewLocationToNewDescriptionButton = (Button) findViewById(R.id.newLocationToNewDescriptionButton);
         mNewLocationToNewDescriptionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

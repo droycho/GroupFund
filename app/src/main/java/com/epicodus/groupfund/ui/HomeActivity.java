@@ -30,8 +30,6 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
 //        UpcomingEventsListView
-//        mUpcomingEventsListView = (ListView) findViewById(R.id.upcomingEventsListView);
-
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, events);
         mUpcomingEventsListView.setAdapter(adapter);
 
@@ -43,8 +41,6 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 //        FriendsUpcomingEventsListView
-//        mFriendUpcomingEventsListView = (ListView) findViewById(R.id.friendUpcomingEventsListView);
-
         ArrayAdapter friendAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, friendEvents);
         mFriendUpcomingEventsListView.setAdapter(friendAdapter);
 
@@ -56,7 +52,6 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 //        CreateNewEventButton
-//        mNewEventButton = (Button) findViewById(R.id.newEventButton);
         mNewEventButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

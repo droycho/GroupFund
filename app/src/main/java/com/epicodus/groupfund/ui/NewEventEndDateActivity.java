@@ -10,23 +10,26 @@ import android.widget.EditText;
 
 import com.epicodus.groupfund.R;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 public class NewEventEndDateActivity extends AppCompatActivity {
     public static final String TAG = NewEventEndDateActivity.class.getSimpleName();
-    private Button mNewEndDateToNewLocationButton;
-    private EditText mNewEndDateEditText;
+    @Bind(R.id.newEndDateToNewLocationButton) Button mNewEndDateToNewLocationButton;
+    @Bind(R.id.newEndDateEditText) EditText mNewEndDateEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_event_end_date);
+        ButterKnife.bind(this);
 //        GetDataFromNewTitleAndNewStartDate
         Intent intent = getIntent();
         String title = intent.getStringExtra("title");
         String startDate = intent.getStringExtra("startDate");
 //        NewEventEndDateInputField
-        mNewEndDateEditText = (EditText) findViewById(R.id.newEndDateEditText);
+//        mNewEndDateEditText = (EditText) findViewById(R.id.newEndDateEditText);
 //        NextStepButton
-        mNewEndDateToNewLocationButton = (Button) findViewById(R.id.newEndDateToNewLocationButton);
         mNewEndDateToNewLocationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

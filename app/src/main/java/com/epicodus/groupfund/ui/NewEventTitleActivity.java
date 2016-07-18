@@ -9,19 +9,22 @@ import android.widget.EditText;
 
 import com.epicodus.groupfund.R;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 public class NewEventTitleActivity extends AppCompatActivity {
-    private Button mNewTitleToNewStartDateButton;
-    private Button mNewEventToHomeButton;
-    private EditText mNewTitleEditText;
+    @Bind(R.id.newTitleToNewStartDateButton) Button mNewTitleToNewStartDateButton;
+    @Bind(R.id.newEventToHomeButton) Button mNewEventToHomeButton;
+    @Bind(R.id.newTitleEditText) EditText mNewTitleEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_event_title);
+        ButterKnife.bind(this);
 //        NewEventTitleInputField
-        mNewTitleEditText = (EditText) findViewById(R.id.newTitleEditText);
+//        mNewTitleEditText = (EditText) findViewById(R.id.newTitleEditText);
 //        NextStepButton
-        mNewTitleToNewStartDateButton = (Button) findViewById(R.id.newTitleToNewStartDateButton);
         mNewTitleToNewStartDateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -32,7 +35,6 @@ public class NewEventTitleActivity extends AppCompatActivity {
             }
         });
 //        GoHomeFromNewEventFormButton
-        mNewEventToHomeButton = (Button) findViewById(R.id.newEventToHomeButton);
         mNewEventToHomeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

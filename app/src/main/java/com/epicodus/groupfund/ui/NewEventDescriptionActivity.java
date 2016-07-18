@@ -10,15 +10,19 @@ import android.widget.EditText;
 
 import com.epicodus.groupfund.R;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 public class NewEventDescriptionActivity extends AppCompatActivity {
     public static final String TAG = NewEventDescriptionActivity.class.getSimpleName();
-    private Button mNewDescriptionToNewTotalCostButton;
-    private EditText mNewDescriptionEditText;
+    @Bind(R.id.newDescriptionToNewTotalCostButton) Button mNewDescriptionToNewTotalCostButton;
+    @Bind(R.id.newDescriptionEditText) EditText mNewDescriptionEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_event_description);
+        ButterKnife.bind(this);
 //        GetDataFromNewTitleAndNewStartDateAndNewEndDateAndNewLocation
         Intent intent = getIntent();
         String title = intent.getStringExtra("title");
@@ -26,9 +30,8 @@ public class NewEventDescriptionActivity extends AppCompatActivity {
         String endDate = intent.getStringExtra("endDate");
         String location = intent.getStringExtra("location");
 //        NewEventDescriptionInputField
-        mNewDescriptionEditText = (EditText) findViewById(R.id.newDescriptionEditText);
+//        mNewDescriptionEditText = (EditText) findViewById(R.id.newDescriptionEditText);
 //        NextStepButton
-        mNewDescriptionToNewTotalCostButton = (Button) findViewById(R.id.newDescriptionToNewTotalCostButton);
         mNewDescriptionToNewTotalCostButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

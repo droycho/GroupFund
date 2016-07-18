@@ -9,21 +9,24 @@ import android.widget.EditText;
 
 import com.epicodus.groupfund.R;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 public class NewEventStartDateActivity extends AppCompatActivity {
-    private Button mNewStartDateToNewEndDateButton;
-    private EditText mNewStartDateEditText;
+    @Bind(R.id.newStartDateToNewEndDateButton) Button mNewStartDateToNewEndDateButton;
+    @Bind(R.id.newStartDateEditText) EditText mNewStartDateEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_event_start_date);
+        ButterKnife.bind(this);
 //        GetDataFromNewTitle
         Intent intent = getIntent();
         String title = intent.getStringExtra("title");
 //        NewEventStartDateInputField
-        mNewStartDateEditText = (EditText) findViewById(R.id.newStartDateEditText);
+//        mNewStartDateEditText = (EditText) findViewById(R.id.newStartDateEditText);
 //        NextStepButton
-        mNewStartDateToNewEndDateButton = (Button) findViewById(R.id.newStartDateToNewEndDateButton);
         mNewStartDateToNewEndDateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

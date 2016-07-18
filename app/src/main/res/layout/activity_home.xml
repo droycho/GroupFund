@@ -27,7 +27,7 @@
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="150sp"
-        android:id="@+id/listView"
+        android:id="@+id/upcomingEventsListView"
         android:layout_below="@+id/textView4"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -44,7 +44,7 @@
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="150sp"
-        android:id="@+id/listView2"
+        android:id="@+id/friendUpcomingEventsListView"
         android:layout_below="@+id/textView5"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />

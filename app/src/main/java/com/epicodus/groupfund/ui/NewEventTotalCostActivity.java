@@ -19,6 +19,13 @@ public class NewEventTotalCostActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_event_total_cost);
+//        GetDataFromNewTitleAndNewStartDateAndNewEndDateAndNewLocationAndNewDescription
+        Intent intent = getIntent();
+        String title = intent.getStringExtra("title");
+        String startDate = intent.getStringExtra("startDate");
+        String endDate = intent.getStringExtra("endDate");
+        String location = intent.getStringExtra("location");
+        String description = intent.getStringExtra("description");
 //        NewEventTotalCostInputField
         mNewTotalCostEditText = (EditText) findViewById(R.id.newTotalCostEditText);
 //        InviteButton

@@ -19,6 +19,11 @@ public class NewEventLocationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_event_location);
+//        GetDataFromNewTitleAndNewStartDateAndNewEndDate
+        Intent intent = getIntent();
+        String title = intent.getStringExtra("title");
+        String startDate = intent.getStringExtra("startDate");
+        String endDate = intent.getStringExtra("endDate");
 //        NewEventLocationInputField
         mNewLocationEditText = (EditText) findViewById(R.id.newLocationEditText);
 //        NextStepButton

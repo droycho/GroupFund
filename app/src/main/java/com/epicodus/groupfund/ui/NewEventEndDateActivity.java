@@ -19,6 +19,10 @@ public class NewEventEndDateActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_event_end_date);
+//        GetDataFromNewTitleAndNewStartDate
+        Intent intent = getIntent();
+        String title = intent.getStringExtra("title");
+        String startDate = intent.getStringExtra("startDate");
 //        NewEventEndDateInputField
         mNewEndDateEditText = (EditText) findViewById(R.id.newEndDateEditText);
 //        NextStepButton

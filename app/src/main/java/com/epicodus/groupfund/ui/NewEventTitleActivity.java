@@ -30,6 +30,7 @@ public class NewEventTitleActivity extends AppCompatActivity {
                 String title = mNewTitleEditText.getText().toString();
                 Log.d(TAG, title);
                 Intent intent = new Intent(NewEventTitleActivity.this, NewEventStartDateActivity.class);
+                intent.putExtra("title", title);
                 startActivity(intent);
             }
         });

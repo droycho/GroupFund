@@ -29,6 +29,7 @@ public class NewEventDescriptionActivity extends AppCompatActivity {
                 String description = mNewDescriptionEditText.getText().toString();
                 Log.d(TAG, description);
                 Intent intent = new Intent(NewEventDescriptionActivity.this, NewEventTotalCostActivity.class);
+                intent.putExtra("description", description);
                 startActivity(intent);
             }
         });

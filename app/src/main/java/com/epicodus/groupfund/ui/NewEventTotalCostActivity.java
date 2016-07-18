@@ -29,6 +29,7 @@ public class NewEventTotalCostActivity extends AppCompatActivity {
                 String totalCost = mNewTotalCostEditText.getText().toString();
                 Log.d(TAG, totalCost);
                 Intent intent = new Intent(NewEventTotalCostActivity.this, InviteActivity.class);
+                intent.putExtra("totalCost", totalCost);
                 startActivity(intent);
             }
         });

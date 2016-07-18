@@ -19,6 +19,10 @@ public class NewEventStartDateActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_event_start_date);
+//        GetDataFromNewTitle
+        Intent intent = getIntent();
+        String title = intent.getStringExtra("title");
+        Log.d(TAG, title);
 //        NewEventStartDateInputField
         mNewStartDateEditText = (EditText) findViewById(R.id.newStartDateEditText);
 //        NextStepButton
@@ -29,6 +33,7 @@ public class NewEventStartDateActivity extends AppCompatActivity {
                 String startDate = mNewStartDateEditText.getText().toString();
                 Log.d(TAG,startDate);
                 Intent intent = new Intent(NewEventStartDateActivity.this, NewEventEndDateActivity.class);
+                intent.putExtra("startDate", startDate);
                 startActivity(intent);
             }
         });

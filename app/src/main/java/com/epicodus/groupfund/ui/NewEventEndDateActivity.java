@@ -29,6 +29,7 @@ public class NewEventEndDateActivity extends AppCompatActivity {
                 String endDate = mNewEndDateEditText.getText().toString();
                 Log.d(TAG, endDate);
                 Intent intent = new Intent(NewEventEndDateActivity.this, NewEventLocationActivity.class);
+                intent.putExtra("endDate", endDate);
                 startActivity(intent);
             }
         });

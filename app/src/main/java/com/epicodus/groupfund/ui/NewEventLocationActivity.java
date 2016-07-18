@@ -29,6 +29,7 @@ public class NewEventLocationActivity extends AppCompatActivity {
                 String location = mNewLocationEditText.getText().toString();
                 Log.d(TAG, location);
                 Intent intent = new Intent(NewEventLocationActivity.this, NewEventDescriptionActivity.class);
+                intent.putExtra("location", location);
                 startActivity(intent);
             }
         });

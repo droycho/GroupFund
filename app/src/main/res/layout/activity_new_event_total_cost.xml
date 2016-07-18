@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:inputType="date"
         android:ems="10"
-        android:id="@+id/totalCostEditText"
+        android:id="@+id/newTotalCostEditText"
         android:layout_below="@+id/textView12"
         android:layout_centerHorizontal="true"
         android:hint="Estimated Total Cost" />
@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:text="Invite Members"
         android:id="@+id/inviteButton"
-        android:layout_below="@+id/totalCostEditText"
+        android:layout_below="@+id/newTotalCostEditText"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="64dp" />
 

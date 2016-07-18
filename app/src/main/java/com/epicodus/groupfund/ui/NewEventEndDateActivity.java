@@ -8,22 +8,21 @@ import android.widget.Button;
 
 import com.epicodus.groupfund.R;
 
-public class NewEventStartDateActivity extends AppCompatActivity {
-    private Button mNewStartDateToNewEndDateButton;
+public class NewEventEndDateActivity extends AppCompatActivity {
+    private Button mNewEndDateToNewLocationButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_event_start_date);
+        setContentView(R.layout.activity_new_event_end_date);
 //        NextStepButton
-        mNewStartDateToNewEndDateButton = (Button) findViewById(R.id.newStartDateToNewEndDateButton);
-        mNewStartDateToNewEndDateButton.setOnClickListener(new View.OnClickListener() {
+        mNewEndDateToNewLocationButton = (Button) findViewById(R.id.newEndDateToNewLocationButton);
+        mNewEndDateToNewLocationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(NewEventStartDateActivity.this, NewEventEndDateActivity.class);
+                Intent intent = new Intent(NewEventEndDateActivity.this, NewEventLocationActivity.class);
                 startActivity(intent);
             }
         });
-
     }
 }

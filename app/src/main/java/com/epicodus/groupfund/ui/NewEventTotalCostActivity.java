@@ -8,19 +8,19 @@ import android.widget.Button;
 
 import com.epicodus.groupfund.R;
 
-public class InviteActivity extends AppCompatActivity {
-    private Button mConfirmButton;
+public class NewEventTotalCostActivity extends AppCompatActivity {
+    private Button mNewTotalCostToInviteButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_invite);
-//        ConfirmButton
-        mConfirmButton = (Button) findViewById(R.id.confirmButton);
-        mConfirmButton.setOnClickListener(new View.OnClickListener() {
+        setContentView(R.layout.activity_new_event_total_cost);
+//        InviteButton
+        mNewTotalCostToInviteButton = (Button) findViewById(R.id.inviteButton);
+        mNewTotalCostToInviteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(InviteActivity.this, HomeActivity.class);
+                Intent intent = new Intent(NewEventTotalCostActivity.this, InviteActivity.class);
                 startActivity(intent);
             }
         });

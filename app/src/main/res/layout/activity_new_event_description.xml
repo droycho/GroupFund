@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"
         android:ems="10"
-        android:id="@+id/descriptionEditText"
+        android:id="@+id/newDescriptionEditText"
         android:layout_below="@+id/textView11"
         android:layout_centerHorizontal="true"
         android:hint="Description/Plan" />
@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:text="Next Step"
         android:id="@+id/newDescriptionToNewTotalCostButton"
-        android:layout_below="@+id/descriptionEditText"
+        android:layout_below="@+id/newDescriptionEditText"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="64dp" />
 

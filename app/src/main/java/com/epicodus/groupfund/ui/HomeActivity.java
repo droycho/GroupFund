@@ -13,10 +13,13 @@ import android.widget.Toast;
 
 import com.epicodus.groupfund.R;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 public class HomeActivity extends AppCompatActivity {
-    private ListView mUpcomingEventsListView;
-    private ListView mFriendUpcomingEventsListView;
-    private Button mNewEventButton;
+    @Bind(R.id.upcomingEventsListView) ListView mUpcomingEventsListView;
+    @Bind(R.id.friendUpcomingEventsListView) ListView mFriendUpcomingEventsListView;
+    @Bind(R.id.newEventButton) Button mNewEventButton;
 //    TestEvents
     private String[] events = new String[] {"Test Event 1", "Test Event 2", "Test Event 3", "Test Event 4", "Test Event 5", "Test Event 6", "Test Event 7", "Test Event 8", "Test Event 9"};
     private String[] friendEvents = new String[] {"Friend Event 1", "Friend Event 2", "Friend Event 3", "Friend Event 4", "Friend Event 5", "Friend Event 6", "Friend Event 7", "Friend Event 9"};
@@ -25,8 +28,9 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        ButterKnife.bind(this);
 //        UpcomingEventsListView
-        mUpcomingEventsListView = (ListView) findViewById(R.id.upcomingEventsListView);
+//        mUpcomingEventsListView = (ListView) findViewById(R.id.upcomingEventsListView);
 
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, events);
         mUpcomingEventsListView.setAdapter(adapter);
@@ -39,7 +43,7 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 //        FriendsUpcomingEventsListView
-        mFriendUpcomingEventsListView = (ListView) findViewById(R.id.friendUpcomingEventsListView);
+//        mFriendUpcomingEventsListView = (ListView) findViewById(R.id.friendUpcomingEventsListView);
 
         ArrayAdapter friendAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, friendEvents);
         mFriendUpcomingEventsListView.setAdapter(friendAdapter);
@@ -52,7 +56,7 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 //        CreateNewEventButton
-        mNewEventButton = (Button) findViewById(R.id.newEventButton);
+//        mNewEventButton = (Button) findViewById(R.id.newEventButton);
         mNewEventButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

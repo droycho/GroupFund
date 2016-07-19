@@ -19,45 +19,39 @@
         <activity android:name=".ui.NewEventTitleActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.epicodus.groupfund.ui.HomeActivity">
-            </meta-data>
+                android:value="com.epicodus.groupfund.ui.HomeActivity"></meta-data>
         </activity>
         <activity android:name=".ui.NewEventStartDateActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.epicodus.groupfund.ui.NewEventTitleActivity">
-            </meta-data>
+                android:value="com.epicodus.groupfund.ui.NewEventTitleActivity"></meta-data>
         </activity>
         <activity android:name=".ui.NewEventEndDateActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.epicodus.groupfund.ui.NewEventStartDateActivity">
-            </meta-data>
+                android:value="com.epicodus.groupfund.ui.NewEventStartDateActivity"></meta-data>
         </activity>
         <activity android:name=".ui.NewEventLocationActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.epicodus.groupfund.ui.NewEventEndDateActivity">
-            </meta-data>
+                android:value="com.epicodus.groupfund.ui.NewEventEndDateActivity"></meta-data>
         </activity>
         <activity android:name=".ui.NewEventDescriptionActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.epicodus.groupfund.ui.NewEventLocationActivity">
-            </meta-data>
+                android:value="com.epicodus.groupfund.ui.NewEventLocationActivity"></meta-data>
         </activity>
         <activity android:name=".ui.NewEventTotalCostActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.epicodus.groupfund.ui.NewEventDescriptionActivity">
-            </meta-data>
+                android:value="com.epicodus.groupfund.ui.NewEventDescriptionActivity"></meta-data>
         </activity>
         <activity android:name=".ui.InviteActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.epicodus.groupfund.ui.NewEventTotalCostActivity">
-            </meta-data>
+                android:value="com.epicodus.groupfund.ui.NewEventTotalCostActivity"></meta-data>
         </activity>
+        <activity android:name=".ui.EventDetailActivity"></activity>
     </application>
 
 </manifest>

@@ -28,7 +28,7 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.Even
     }
 
     @Override
-    public EventListAdapter.EventViewHolder onCreate ViewHolder(ViewGroup parent, int viewType) {
+    public EventListAdapter.EventViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.event_list_item, parent, false);
         EventViewHolder viewHolder = new EventViewHolder(view);
         return viewHolder;
@@ -59,8 +59,8 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.Even
 
         public void bindEvent(Event event) {
             mTitleTextView.setText(event.getTitle());
-            mStartDateTextView.setText("Start Date: " + event.getStartDate().get(0));
-            mEndDateTextView.setText("End Date: " + event.getEndDate().get(0));
+            mStartDateTextView.setText("Start Date: " + event.getStartDate());
+            mEndDateTextView.setText("End Date: " + event.getEndDate());
             mTotalCostTextView.setText("Total Cost: $ " + event.getTotcalCost());
         }
     }

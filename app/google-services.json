@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "713647254189",
+    "firebase_url": "https://groupfund-ac0e3.firebaseio.com",
+    "project_id": "groupfund-ac0e3",
+    "storage_bucket": "groupfund-ac0e3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:713647254189:android:a5b2af00949ad530",
+        "android_client_info": {
+          "package_name": "com.epicodus.groupfund"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "713647254189-i49aqst2knm9nfrutbqm5j1h8eo7daqa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.epicodus.groupfund",
+            "certificate_hash": "53DFFC82477F6425EB2600D2C0058B9271899998"
+          }
+        },
+        {
+          "client_id": "713647254189-a3f90b2tk033dklqjg0d3qadpjivkr62.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB31GswljPeEudyt05rtPvrNt0PcdbtpDk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "713647254189-a3f90b2tk033dklqjg0d3qadpjivkr62.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

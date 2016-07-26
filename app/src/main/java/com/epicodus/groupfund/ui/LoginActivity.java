@@ -22,6 +22,8 @@ import com.google.firebase.auth.FirebaseUser;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
+//noteFor Commit. need to make user specific data sets, then need to call firebase data to display properly. problem here is that all parameters seem to be saving as child nodes.
+
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     public static final String TAG = LoginActivity.class.getSimpleName();
 

@@ -2,6 +2,7 @@ package com.epicodus.groupfund.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
@@ -19,6 +20,7 @@ import com.epicodus.groupfund.R;
 import com.epicodus.groupfund.adapters.EventListAdapter;
 import com.epicodus.groupfund.models.Event;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 
@@ -27,9 +29,10 @@ import butterknife.ButterKnife;
 
 public class HomeActivity extends AppCompatActivity {
     public static final String TAG = HomeActivity.class.getSimpleName();
-    @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
+    private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthListener;
     private EventListAdapter mAdapter;
-
+    @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
     @Bind(R.id.upcomingEventsListView) ListView mUpcomingEventsListView;
     @Bind(R.id.friendUpcomingEventsListView) ListView mFriendUpcomingEventsListView;
     @Bind(R.id.newEventButton) Button mNewEventButton;
@@ -44,6 +47,19 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
+
+        mAuth = FirebaseAuth.getInstance();
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user != null) {
+                    getSupportActionBar().setTitle("Welcome,  " + user.getDisplayName() + "!");
+                }else {
+
+                }
+            }
+        };
 //        UpcomingEventsListView
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, events);
         mUpcomingEventsListView.setAdapter(adapter);
@@ -74,6 +90,19 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+    @Override
+    public void onStart() {
+        super.onStart();
+        mAuth.addAuthStateListener(mAuthListener);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (mAuthListener != null) {
+            mAuth.removeAuthStateListener(mAuthListener);
+        }
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

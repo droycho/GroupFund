@@ -30,13 +30,59 @@
         android:layout_below="@+id/textView7"
         android:layout_centerHorizontal="true"
         android:hint="Event Name" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:id="@+id/newStartDateEditText"
+        android:layout_below="@+id/newTitleEditText"
+        android:layout_centerHorizontal="true"
+        android:hint="Event Start Date" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:id="@+id/newEndDateEditText"
+        android:layout_below="@+id/newStartDateEditText"
+        android:layout_centerHorizontal="true"
+        android:hint="Event End Date" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/newLocationEditText"
+        android:layout_below="@+id/newEndDateEditText"
+        android:layout_centerHorizontal="true"
+        android:hint="Event Location" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/newDescriptionEditText"
+        android:layout_below="@+id/newLocationEditText"
+        android:layout_centerHorizontal="true"
+        android:hint="Event Description/Itinerary" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:id="@+id/newTotalCostEditText"
+        android:layout_below="@+id/newDescriptionEditText"
+        android:layout_centerHorizontal="true"
+        android:hint="Estimated Total Cost" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/newMembersEditText"
+        android:layout_below="@+id/newTotalCostEditText"
+        android:layout_centerHorizontal="true"
+        android:hint="Members (separate with comma)" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Next Step"
-        android:id="@+id/newTitleToNewStartDateButton"
-        android:layout_below="@+id/newTitleEditText"
+        android:text="Submit Event"
+        android:id="@+id/newEventSubmitButton"
+        android:layout_below="@+id/newMembersEditText"
         android:layout_centerHorizontal="true" />
 
     <Button

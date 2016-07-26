@@ -10,17 +10,19 @@ public class Event {
     private String location;
     private String description;
     private String totcalCost;
+    private String members;
 //    private String pushId;
 
     public Event() {}
 
-    public Event(String title, String startDate, String endDate, String location, String description, String totalCost) {
+    public Event(String title, String startDate, String endDate, String location, String description, String totalCost, String members) {
         this.title = title;
         this.startDate = startDate;
         this.endDate = endDate;
         this.location = location;
         this.description = description;
         this.totcalCost = totalCost;
+        this.members = members;
     }
 
     public String getTitle() {
@@ -46,6 +48,8 @@ public class Event {
     public String getTotcalCost() {
         return totcalCost;
     }
+
+    public String getMembers() { return members; }
 
 //    public String getPushId() {
 //        return pushId;

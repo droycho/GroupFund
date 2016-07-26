@@ -14,15 +14,6 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Enter Member names below. Separate multiple members with commas."
-        android:id="@+id/textView14"
-        android:layout_below="@+id/textView13"
-        android:layout_centerHorizontal="true" />
-
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -37,10 +28,18 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Add Member"
+        android:id="@+id/addMemberButton"
+        android:layout_below="@+id/newMemberEditText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="Confirm Event"
         android:id="@+id/confirmButton"
+        android:layout_below="@+id/addMemberButton"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="56dp"
-        android:layout_below="@+id/newMemberEditText" />
-
+        android:layout_marginTop="56dp" />
 </RelativeLayout>

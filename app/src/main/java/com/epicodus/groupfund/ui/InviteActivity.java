@@ -43,6 +43,12 @@ public class InviteActivity extends AppCompatActivity implements View.OnClickLis
         String location = intent.getStringExtra("location");
         String description = intent.getStringExtra("description");
         String totalCost = intent.getStringExtra("totalCost");
+        intent.putExtra("title", title);
+        intent.putExtra("startDate", startDate);
+        intent.putExtra("endDate", endDate);
+        intent.putExtra("location", location);
+        intent.putExtra("description", description);
+        intent.putExtra("totalCost", totalCost);
 //        ConfirmButton
         mConfirmButton.setOnClickListener(this);
     }

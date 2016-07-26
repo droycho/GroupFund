@@ -36,7 +36,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Event Starting on: 12/12/2016"
-                android:id="@+id/startDateTextView"
+                android:id="@+id/eventStartDateTextView"
                 android:layout_below="@+id/eventTitleTextView"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
@@ -47,8 +47,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Event Ending on: 12/14/2016"
-                android:id="@+id/cuisineTextView"
-                android:layout_below="@+id/startDateTextView"
+                android:id="@+id/eventEndDateTextView"
+                android:layout_below="@+id/eventStartDateTextView"
                 android:textColor="@color/colorSecondaryText"
                 android:textStyle="italic" />
         </RelativeLayout>
@@ -73,7 +73,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Location: Portland, Oregon"
-                    android:id="@+id/locationTextView"
+                    android:id="@+id/eventLocationTextView"
                     android:drawableLeft="@mipmap/ic_location_on_black_24dp"
                     android:drawablePadding="4dp"
                     android:textColor="@color/colorTextIcons"
@@ -86,7 +86,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="This is a Description or itinerary of the event. Can be large or small."
-                    android:id="@+id/descriptionTextView"
+                    android:id="@+id/eventDescriptionTextView"
                     android:drawableLeft="@mipmap/ic_list_black_24dp"
                     android:drawablePadding="4dp"
                     android:textColor="@color/colorTextIcons"
@@ -101,7 +101,7 @@
                     android:text="Total Estimated Cost: $ 978.99"
                     android:drawableLeft="@mipmap/ic_attach_money_black_24dp"
                     android:drawablePadding="4dp"
-                    android:id="@+id/totalCostTextView"
+                    android:id="@+id/eventTotalCostTextView"
                     android:textColor="@color/colorTextIcons"
                     android:textSize="15sp"
                     android:textStyle="bold"
@@ -114,17 +114,12 @@
                     android:text="Participants: "
                     android:drawableLeft="@mipmap/ic_people_black_24dp"
                     android:drawablePadding="4dp"
-                    android:id="@+id/memberTextView"
+                    android:id="@+id/eventMemberTextView"
                     android:textColor="@color/colorTextIcons"
                     android:textSize="15sp"
                     android:textStyle="bold"
                     android:layout_marginBottom="10dp"
                     android:gravity="center_vertical" />
-
-                <ListView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/memberListView" />
 
             </LinearLayout>
 

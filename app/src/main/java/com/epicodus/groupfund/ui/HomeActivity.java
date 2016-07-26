@@ -71,17 +71,7 @@ public class HomeActivity extends AppCompatActivity {
                 Toast.makeText(HomeActivity.this, event, Toast.LENGTH_LONG).show();
             }
         });
-//        FriendsUpcomingEventsListView
-        ArrayAdapter friendAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, friendEvents);
-        mFriendUpcomingEventsListView.setAdapter(friendAdapter);
 
-        mFriendUpcomingEventsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String friendEvent = ((TextView)view).getText().toString();
-                Toast.makeText(HomeActivity.this, friendEvent, Toast.LENGTH_LONG).show();
-            }
-        });
 //        CreateNewEventButton
         mNewEventButton.setOnClickListener(new View.OnClickListener() {
             @Override

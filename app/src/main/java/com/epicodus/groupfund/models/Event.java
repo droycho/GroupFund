@@ -1,17 +1,20 @@
 package com.epicodus.groupfund.models;
 
+import org.parceler.Parcel;
+
 /**
  * Created by DJRoy on 7/12/16.
  */
+@Parcel
 public class Event {
     private String title;
     private String startDate;
     private String endDate;
     private String location;
     private String description;
-    private String totcalCost;
+    private String totalCost;
     private String members;
-//    private String pushId;
+    private String pushId;
 
     public Event() {}
 
@@ -21,7 +24,7 @@ public class Event {
         this.endDate = endDate;
         this.location = location;
         this.description = description;
-        this.totcalCost = totalCost;
+        this.totalCost = totalCost;
         this.members = members;
     }
 
@@ -45,18 +48,18 @@ public class Event {
         return description;
     }
 
-    public String getTotcalCost() {
-        return totcalCost;
+    public String getTotalCost() {
+        return totalCost;
     }
 
     public String getMembers() { return members; }
 
-//    public String getPushId() {
-//        return pushId;
-//    }
-//
-//    public void setPushId(String mPushId) {
-//        this.pushId = mPushId;
-//    }
+    public String getPushId() {
+        return pushId;
+    }
+
+    public void setPushId(String mPushId) {
+        this.pushId = mPushId;
+    }
 
 }

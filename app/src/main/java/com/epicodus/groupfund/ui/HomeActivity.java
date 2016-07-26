@@ -34,7 +34,6 @@ public class HomeActivity extends AppCompatActivity {
     private EventListAdapter mAdapter;
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
     @Bind(R.id.upcomingEventsListView) ListView mUpcomingEventsListView;
-    @Bind(R.id.friendUpcomingEventsListView) ListView mFriendUpcomingEventsListView;
     @Bind(R.id.newEventButton) Button mNewEventButton;
 
     public ArrayList<Event> mEvents = new ArrayList<>();

@@ -16,7 +16,6 @@ public class Restaurant {
     double mLongitude;
     ArrayList<String> mCategories = new ArrayList<>();
 
-    // empty constructor needed by the Parceler library:
     public Restaurant() {}
 
     public Restaurant(String name, String phone, String website,

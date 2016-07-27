@@ -50,9 +50,9 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.Even
 
     public class EventViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         @Bind(R.id.eventTitleTextView) TextView mTitleTextView;
-        @Bind(R.id.startDateTextView) TextView mStartDateTextView;
-        @Bind(R.id.endDateTextView) TextView mEndDateTextView;
-        @Bind(R.id.totalCostTextView) TextView mTotalCostTextView;
+        @Bind(R.id.eventStartDateTextView) TextView mStartDateTextView;
+        @Bind(R.id.eventEndDateTextView) TextView mEndDateTextView;
+        @Bind(R.id.eventTotalCostTextView) TextView mTotalCostTextView;
 
         private Context mContext;
 

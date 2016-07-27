@@ -17,6 +17,14 @@
         android:id="@+id/textView5"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Enter a country below to get important travel information, such as recommended vaccinations, security threat level, currency exchange, and various other bits of information."
+        android:id="@+id/textView6"
+        android:layout_below="@+id/textView5"
+        android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="match_parent"

@@ -87,7 +87,6 @@ public class NewEventTitleActivity extends AppCompatActivity implements View.OnC
 
             Event eventToWrite = new Event(title, startDate, endDate, location, description, totalCost, members);
             saveEventToFirebase(eventToWrite);
-        }
             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
             String uid = user.getUid();
             DatabaseReference eventRef = FirebaseDatabase
@@ -99,7 +98,7 @@ public class NewEventTitleActivity extends AppCompatActivity implements View.OnC
             String pushId = pushRef.getKey();
             mEvent.setPushId(pushId);
             pushRef.setValue(mEvent);
-
+        }
 
         // GoHomeFromNewEventFormButton
         if (view == mNewEventToHomeButton) {

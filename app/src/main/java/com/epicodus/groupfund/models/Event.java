@@ -58,8 +58,8 @@ public class Event {
         return pushId;
     }
 
-    public void setPushId(String mPushId) {
-        this.pushId = mPushId;
+    public void setPushId(String pushId) {
+        this.pushId = pushId;
     }
 
 }

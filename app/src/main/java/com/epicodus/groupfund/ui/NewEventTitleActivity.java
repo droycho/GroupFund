@@ -9,8 +9,11 @@ import android.widget.EditText;
 
 import com.epicodus.groupfund.Constants;
 import com.epicodus.groupfund.R;
+import com.epicodus.groupfund.models.Event;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -40,46 +43,48 @@ public class NewEventTitleActivity extends AppCompatActivity implements View.OnC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_event_title);
         ButterKnife.bind(this);
-//        NewEventTitleInputField
+
+        // NewEventTitleInputField
         mNewEventSubmitButton.setOnClickListener(this);
         mNewEventToHomeButton.setOnClickListener(this);
     }
-            @Override
-            public void onClick(View view) {
-//        NextStepButton
-                if (view == mNewEventSubmitButton) {
-                    String title = mNewTitleEditText.getText().toString();
-                    String startDate = mNewStartDateEditText.getText().toString();
-                    String endDate = mNewEndDateEditText.getText().toString();
-                    String location = mNewLocationEditText.getText().toString();
-                    String description = mNewDescriptionEditText.getText().toString();
-                    String totalCost = mNewTotalCostEditText.getText().toString();
-                    String members = mNewMembersEditText.getText().toString();
-                    saveEventToFirebase(title, startDate, endDate, location, description, totalCost, members);
-                    Intent intent = new Intent(NewEventTitleActivity.this, HomeActivity.class);
-                    intent.putExtra("title", title);
-                    intent.putExtra("startDate", startDate);
-                    intent.putExtra("endDate", endDate);
-                    intent.putExtra("location", location);
-                    intent.putExtra("description", description);
-                    intent.putExtra("totalCost", totalCost);
-                    intent.putExtra("members", members);
-                    startActivity(intent);
-                }
-//        GoHomeFromNewEventFormButton
-                if (view == mNewEventToHomeButton) {
-                    Intent intent = new Intent(NewEventTitleActivity.this, HomeActivity.class);
-                    startActivity(intent);
-                }
-            }
-    public void saveEventToFirebase(String title, String startDate, String endDate, String location, String description, String totalCost, String members) {
-        mEventReference.push().setValue(title);
-        mEventReference.push().setValue(startDate);
-        mEventReference.push().setValue(endDate);
-        mEventReference.push().setValue(location);
-        mEventReference.push().setValue(description);
-        mEventReference.push().setValue(totalCost);
-        mEventReference.push().setValue(members);
+
+    @Override
+    public void onClick(View view) {
+        // EventSubmitButton
+
+        if (view == mNewEventSubmitButton) {
+            String title = mNewTitleEditText.getText().toString();
+            String startDate = mNewStartDateEditText.getText().toString();
+            String endDate = mNewEndDateEditText.getText().toString();
+            String location = mNewLocationEditText.getText().toString();
+            String description = mNewDescriptionEditText.getText().toString();
+            String totalCost = mNewTotalCostEditText.getText().toString();
+            String members = mNewMembersEditText.getText().toString();
+
+            Event eventToWrite = new Event(title, startDate, endDate, location, description, totalCost, members);
+            saveEventToFirebase(eventToWrite);
+
+            Intent intent = new Intent(NewEventTitleActivity.this, HomeActivity.class);
+            intent.putExtra("title", title);
+            intent.putExtra("startDate", startDate);
+            intent.putExtra("endDate", endDate);
+            intent.putExtra("location", location);
+            intent.putExtra("description", description);
+            intent.putExtra("totalCost", totalCost);
+            intent.putExtra("members", members);
+            startActivity(intent);
+        }
+
+        // GoHomeFromNewEventFormButton
+        if (view == mNewEventToHomeButton) {
+            Intent intent = new Intent(NewEventTitleActivity.this, HomeActivity.class);
+            startActivity(intent);
+        }
     }
+
+    public void saveEventToFirebase(ArrayList newEvent) {
+        mEventReference.push().setValue(newEvent);
     }
+}
 

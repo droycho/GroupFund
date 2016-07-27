@@ -81,6 +81,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         if (v == mNewEventButton) {
             Intent intent = new Intent(HomeActivity.this, NewEventTitleActivity.class);
+            startActivity(intent);
         }
         if (v == mSavedEventsButton) {
             Intent intent = new Intent(HomeActivity.this, SavedEventsListActivity.class);

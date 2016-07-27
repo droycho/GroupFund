@@ -45,12 +45,12 @@ public class FirebaseEventViewHolder extends RecyclerView.ViewHolder implements 
         TextView memberTextView = (TextView) mView.findViewById(R.id.eventMemberTextView);
 
         titleTextView.setText(event.getTitle());
-        startDateTextView.setText("Event Start Date: " + event.getStartDate());
-        endDateTextView.setText("Event End Date: " + event.getEndDate());
-        locationTextView.setText(event.getLocation());
-        descriptionTextView.setText(event.getDescription());
-        totalCostTextView.setText("$ " + event.getTotalCost());
-        memberTextView.setText("Participants: " + event.getMembers());
+//        startDateTextView.setText(event.getStartDate());
+//        endDateTextView.setText(event.getEndDate());
+//        locationTextView.setText(event.getLocation());
+//        descriptionTextView.setText(event.getDescription());
+//        totalCostTextView.setText(event.getTotalCost());
+//        memberTextView.setText(event.getMembers());
         Log.d("title", event.getStartDate());
     }
 

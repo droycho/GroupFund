@@ -27,7 +27,7 @@ import java.util.ArrayList;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
     public static final String TAG = HomeActivity.class.getSimpleName();
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
@@ -35,6 +35,7 @@ public class HomeActivity extends AppCompatActivity {
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
     @Bind(R.id.upcomingEventsListView) ListView mUpcomingEventsListView;
     @Bind(R.id.newEventButton) Button mNewEventButton;
+    @Bind(R.id.savedEventsButton) Button mSavedEventsButton;
 
     public ArrayList<Event> mEvents = new ArrayList<>();
 //    TestEvents
@@ -72,13 +73,19 @@ public class HomeActivity extends AppCompatActivity {
         });
 
 //        CreateNewEventButton
-        mNewEventButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this, NewEventTitleActivity.class);
-                startActivity(intent);
-            }
-        });
+        mNewEventButton.setOnClickListener(this);
+        mSavedEventsButton.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v == mNewEventButton) {
+            Intent intent = new Intent(HomeActivity.this, NewEventTitleActivity.class);
+        }
+        if (v == mSavedEventsButton) {
+            Intent intent = new Intent(HomeActivity.this, SavedEventsListActivity.class);
+            startActivity(intent);
+        }
     }
     @Override
     public void onStart() {

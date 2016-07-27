@@ -22,6 +22,7 @@ import butterknife.ButterKnife;
 
 public class NewEventTitleActivity extends AppCompatActivity implements View.OnClickListener {
     private DatabaseReference mEventReference;
+    private ValueEventListener mEventReferenceListener;
 
     @Bind(R.id.newEventSubmitButton) Button mNewEventSubmitButton;
     @Bind(R.id.newEventToHomeButton) Button mNewEventToHomeButton;
@@ -42,7 +43,7 @@ public class NewEventTitleActivity extends AppCompatActivity implements View.OnC
                 .getReference()
                 .child(Constants.FIREBASE_CHILD_EVENT);
 
-        mEventReference.addValueEventListener(new ValueEventListener() {
+        mEventReferenceListener = mEventReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot titleSnapshot : dataSnapshot.getChildren()) {
@@ -102,6 +103,12 @@ public class NewEventTitleActivity extends AppCompatActivity implements View.OnC
 
     public void saveEventToFirebase(Event newEvent) {
         mEventReference.push().setValue(newEvent);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mEventReference.removeEventListener(mEventReferenceListener);
     }
 }
 

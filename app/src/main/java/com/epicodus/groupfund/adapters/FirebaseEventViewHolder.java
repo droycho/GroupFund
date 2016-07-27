@@ -3,6 +3,7 @@ package com.epicodus.groupfund.adapters;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -50,6 +51,7 @@ public class FirebaseEventViewHolder extends RecyclerView.ViewHolder implements 
         descriptionTextView.setText(event.getDescription());
         totalCostTextView.setText("$ " + event.getTotalCost());
         memberTextView.setText("Participants: " + event.getMembers());
+        Log.d("title", event.getStartDate());
     }
 
     @Override

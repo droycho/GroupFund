@@ -56,8 +56,8 @@ public class EventDetailFragment extends Fragment {
         mEndDateLabel.setText("End Date: " + mEvent.getEndDate());
         mLocationLabel.setText("Event Location: " + mEvent.getLocation());
         mDescriptionLabel.setText("Details: " + mEvent.getDescription());
-        mTotalCostLabel.setText("Total Cost: " + mEvent.getTotalCost());
-        mMemberLabel.setText("Members" + mEvent.getMembers());
+        mTotalCostLabel.setText("Total Cost: $" + mEvent.getTotalCost());
+        mMemberLabel.setText("Members: " + mEvent.getMembers());
 
 //        mSaveEventButton.setOnClickListener(this);
 

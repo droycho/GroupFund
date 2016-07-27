@@ -53,7 +53,7 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.Even
         @Bind(R.id.eventStartDateTextView) TextView mStartDateTextView;
         @Bind(R.id.eventEndDateTextView) TextView mEndDateTextView;
         @Bind(R.id.eventTotalCostTextView) TextView mTotalCostTextView;
-
+        private int mOrientation;
         private Context mContext;
 
         public EventViewHolder(View itemView) {
@@ -62,6 +62,11 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.Even
 
             mContext = itemView.getContext();
             itemView.setOnClickListener(this);
+
+//            mOrientation = itemView.getResources().getConfiguration().orientation();
+//            if(mOrientation == Configuration.ORIENTATION_LANDSCAPE) {
+//                createDetailFragment(0);
+//            }
         }
 
         @Override
@@ -79,5 +84,12 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.Even
             mEndDateTextView.setText("End Date: " + event.getEndDate());
             mTotalCostTextView.setText("Total Cost: $ " + event.getTotalCost());
         }
+
+//        private void createDetailFragment(int position) {
+//            EventDetailFragment detailFragment = EventDetailFragment.newInstance(mEvents, position);
+//            FragmentTransaction ft = ((FragmentActivity) mContext).getSupportFragmentManager().beginTransaction();
+//            ft.replace(R.id.eventDetailContainer, detailFragment);
+//            ft.commit();
+//        }
     }
 }

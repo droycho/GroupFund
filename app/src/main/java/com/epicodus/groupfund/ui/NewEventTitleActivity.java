@@ -65,6 +65,7 @@ public class NewEventTitleActivity extends AppCompatActivity implements View.OnC
         // NewEventTitleInputField
         mNewEventSubmitButton.setOnClickListener(this);
         mNewEventToHomeButton.setOnClickListener(this);
+
     }
 
     @Override
@@ -110,5 +111,6 @@ public class NewEventTitleActivity extends AppCompatActivity implements View.OnC
         super.onDestroy();
         mEventReference.removeEventListener(mEventReferenceListener);
     }
+
 }
 

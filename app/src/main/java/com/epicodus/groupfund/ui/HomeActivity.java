@@ -30,6 +30,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
     @Bind(R.id.newEventButton) Button mNewEventButton;
     @Bind(R.id.savedEventsButton) Button mSavedEventsButton;
+    @Bind(R.id.countryButton) Button mCountryButton;
 
     public ArrayList<Event> mEvents = new ArrayList<>();
 //    TestEvents
@@ -54,21 +55,11 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 }
             }
         };
-//        UpcomingEventsListView
-//        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, events);
-//        mUpcomingEventsListView.setAdapter(adapter);
-//
-//        mUpcomingEventsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                String event = ((TextView)view).getText().toString();
-//                Toast.makeText(HomeActivity.this, event, Toast.LENGTH_LONG).show();
-//            }
-//        });
 
 //        CreateNewEventButton
         mNewEventButton.setOnClickListener(this);
         mSavedEventsButton.setOnClickListener(this);
+        mCountryButton.setOnClickListener(this);
     }
 
     @Override
@@ -79,6 +70,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         }
         if (v == mSavedEventsButton) {
             Intent intent = new Intent(HomeActivity.this, SavedEventsListActivity.class);
+            startActivity(intent);
+        }
+        if (v == mCountryButton) {
+            Intent intent = new Intent(HomeActivity.this, CountryActivity.class);
             startActivity(intent);
         }
     }
@@ -117,5 +112,4 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         startActivity(intent);
         finish();
     }
-
 }

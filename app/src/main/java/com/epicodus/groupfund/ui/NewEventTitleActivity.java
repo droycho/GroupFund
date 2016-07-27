@@ -11,6 +11,8 @@ import android.widget.EditText;
 import com.epicodus.groupfund.Constants;
 import com.epicodus.groupfund.R;
 import com.epicodus.groupfund.models.Event;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -34,6 +36,7 @@ public class NewEventTitleActivity extends AppCompatActivity implements View.OnC
     @Bind(R.id.newTotalCostEditText) EditText mNewTotalCostEditText;
     @Bind(R.id.newMembersEditText) EditText mNewMembersEditText;
 
+    private Event mEvent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +76,7 @@ public class NewEventTitleActivity extends AppCompatActivity implements View.OnC
         // EventSubmitButton
 
         if (view == mNewEventSubmitButton) {
+
             String title = mNewTitleEditText.getText().toString();
             String startDate = mNewStartDateEditText.getText().toString();
             String endDate = mNewEndDateEditText.getText().toString();
@@ -83,17 +87,19 @@ public class NewEventTitleActivity extends AppCompatActivity implements View.OnC
 
             Event eventToWrite = new Event(title, startDate, endDate, location, description, totalCost, members);
             saveEventToFirebase(eventToWrite);
-
-            Intent intent = new Intent(NewEventTitleActivity.this, HomeActivity.class);
-            intent.putExtra("title", title);
-            intent.putExtra("startDate", startDate);
-            intent.putExtra("endDate", endDate);
-            intent.putExtra("location", location);
-            intent.putExtra("description", description);
-            intent.putExtra("totalCost", totalCost);
-            intent.putExtra("members", members);
-            startActivity(intent);
         }
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            String uid = user.getUid();
+            DatabaseReference eventRef = FirebaseDatabase
+                    .getInstance()
+                    .getReference(Constants.FIREBASE_CHILD_EVENT)
+                    .child(uid);
+
+            DatabaseReference pushRef = eventRef.push();
+            String pushId = pushRef.getKey();
+            mEvent.setPushId(pushId);
+            pushRef.setValue(mEvent);
+
 
         // GoHomeFromNewEventFormButton
         if (view == mNewEventToHomeButton) {
@@ -111,6 +117,7 @@ public class NewEventTitleActivity extends AppCompatActivity implements View.OnC
         super.onDestroy();
         mEventReference.removeEventListener(mEventReferenceListener);
     }
+
 
 }
 

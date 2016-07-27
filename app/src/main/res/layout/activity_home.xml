@@ -29,14 +29,22 @@
         android:layout_height="match_parent"
         android:id="@+id/recyclerView"
         android:layout_below="@+id/textView4"
-        android:layout_above="@+id/countryButton" />
+        android:layout_above="@+id/locationEditText" />
 
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/locationEditText"
+        android:layout_above="@+id/findRestaurantsButton"
+        android:layout_centerHorizontal="true"
+        android:hint="Search by ZIP Code" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Get Country Info"
-        android:id="@+id/countryButton"
+        android:text="Find Restaurants"
+        android:id="@+id/findRestaurantsButton"
         android:layout_above="@+id/newEventButton"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />

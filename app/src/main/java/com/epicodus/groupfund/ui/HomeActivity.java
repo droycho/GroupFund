@@ -10,6 +10,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.epicodus.groupfund.R;
 import com.epicodus.groupfund.adapters.EventListAdapter;
@@ -30,7 +31,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
     @Bind(R.id.newEventButton) Button mNewEventButton;
     @Bind(R.id.savedEventsButton) Button mSavedEventsButton;
-    @Bind(R.id.countryButton) Button mCountryButton;
+    @Bind(R.id.findRestaurantsButton) Button mFindRestaurantsButton;
+    @Bind(R.id.locationEditText) EditText mLocationEditText;
 
     public ArrayList<Event> mEvents = new ArrayList<>();
 //    TestEvents
@@ -59,7 +61,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 //        CreateNewEventButton
         mNewEventButton.setOnClickListener(this);
         mSavedEventsButton.setOnClickListener(this);
-        mCountryButton.setOnClickListener(this);
+        mFindRestaurantsButton.setOnClickListener(this);
     }
 
     @Override
@@ -72,8 +74,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent(HomeActivity.this, SavedEventsListActivity.class);
             startActivity(intent);
         }
-        if (v == mCountryButton) {
-            Intent intent = new Intent(HomeActivity.this, CountryActivity.class);
+        if(v == mFindRestaurantsButton) {
+            String location = mLocationEditText.getText().toString();
+            Intent intent = new Intent(HomeActivity.this, RestaurantsActivity.class);
+            intent.putExtra("location", location);
             startActivity(intent);
         }
     }

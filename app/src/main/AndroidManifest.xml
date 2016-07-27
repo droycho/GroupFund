@@ -40,16 +40,11 @@
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity android:name=".ui.SavedEventsListActivity" />
-        <activity android:name=".ui.CountryActivity" >
+        <activity android:name=".ui.RestaurantsActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.epicodus.groupfund.ui.HomeActivity" />
             </activity>
-        <activity android:name=".ui.CountryDetailsActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.epicodus.groupfund.ui.CountryActivity" />
-        </activity>
     </application>
 
 </manifest>

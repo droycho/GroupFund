@@ -4,8 +4,12 @@ package com.epicodus.groupfund;
  * Created by DJRoy on 7/25/16.
  */
 public class Constants {
+    public static final String YELP_CONSUMER_KEY = BuildConfig.YELP_CONSUMER_KEY;
+    public static final String YELP_CONSUMER_SECRET = BuildConfig.YELP_CONSUMER_SECRET;
+    public static final String YELP_TOKEN = BuildConfig.YELP_TOKEN;
+    public static final String YELP_TOKEN_SECRET = BuildConfig.YELP_TOKEN_SECRET;
+    public static final String YELP_BASE_URL = "https://api.yelp.com/v2/search?term=food";
+    public static final String YELP_LOCATION_QUERY_PARAMETER = "location";
     public static final String FIREBASE_CHILD_EVENT = "event";
-    public static final String TRAVELBRIEFING_BASE_URL = "https://travelbriefing.org/";
-    public static final String TRAVELBRIEFING_COUNTRY_QUERY_PARAMETER = "country";
 
 }

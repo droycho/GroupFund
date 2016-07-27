@@ -13,8 +13,6 @@ import com.epicodus.groupfund.models.Event;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.ArrayList;
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
@@ -83,7 +81,7 @@ public class NewEventTitleActivity extends AppCompatActivity implements View.OnC
         }
     }
 
-    public void saveEventToFirebase(ArrayList newEvent) {
+    public void saveEventToFirebase(Event newEvent) {
         mEventReference.push().setValue(newEvent);
     }
 }

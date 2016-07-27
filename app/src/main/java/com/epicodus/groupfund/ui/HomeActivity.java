@@ -76,7 +76,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         }
         if(v == mFindRestaurantsButton) {
             String location = mLocationEditText.getText().toString();
-            Intent intent = new Intent(HomeActivity.this, RestaurantsActivity.class);
+            Intent intent = new Intent(HomeActivity.this, RestaurantListActivity.class);
             intent.putExtra("location", location);
             startActivity(intent);
         }

@@ -18,7 +18,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.epicodus.groupfund.ui.HomeActivity" />
         </activity>
-        <activity android:name=".ui.EventDetailActivity" />
+        <activity android:name=".ui.EventDetailActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.epicodus.groupfund.ui.HomeActivity" />
+            </activity>
         <activity android:name=".ui.CreateAccountActivity" />
         <activity android:name=".ui.LoginActivity">
             <intent-filter>

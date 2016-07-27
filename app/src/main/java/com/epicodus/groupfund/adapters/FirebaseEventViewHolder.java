@@ -41,9 +41,9 @@ public class FirebaseEventViewHolder extends RecyclerView.ViewHolder implements 
         TextView totalCostTextView = (TextView) mView.findViewById(R.id.eventTotalCostTextView);
 
         titleTextView.setText(event.getTitle());
-        startDateTextView.setText(event.getStartDate());
-        endDateTextView.setText(event.getEndDate());
-        totalCostTextView.setText(event.getTotalCost());
+        startDateTextView.setText("Start Date: " + event.getStartDate());
+        endDateTextView.setText("End Date" + event.getEndDate());
+        totalCostTextView.setText("$" + event.getTotalCost());
     }
 
     @Override

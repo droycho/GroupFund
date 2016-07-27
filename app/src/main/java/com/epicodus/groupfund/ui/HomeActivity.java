@@ -9,12 +9,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.epicodus.groupfund.R;
 import com.epicodus.groupfund.adapters.EventListAdapter;
@@ -33,14 +28,13 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     private FirebaseAuth.AuthStateListener mAuthListener;
     private EventListAdapter mAdapter;
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
-    @Bind(R.id.upcomingEventsListView) ListView mUpcomingEventsListView;
     @Bind(R.id.newEventButton) Button mNewEventButton;
     @Bind(R.id.savedEventsButton) Button mSavedEventsButton;
 
     public ArrayList<Event> mEvents = new ArrayList<>();
 //    TestEvents
-    private String[] events = new String[] {"Test Event 1", "Test Event 2", "Test Event 3", "Test Event 4", "Test Event 5", "Test Event 6", "Test Event 7", "Test Event 8", "Test Event 9"};
-    private String[] friendEvents = new String[] {"Friend Event 1", "Friend Event 2", "Friend Event 3", "Friend Event 4", "Friend Event 5", "Friend Event 6", "Friend Event 7", "Friend Event 9"};
+//    private String[] events = new String[] {"Test Event 1", "Test Event 2", "Test Event 3", "Test Event 4", "Test Event 5", "Test Event 6", "Test Event 7", "Test Event 8", "Test Event 9"};
+//    private String[] friendEvents = new String[] {"Friend Event 1", "Friend Event 2", "Friend Event 3", "Friend Event 4", "Friend Event 5", "Friend Event 6", "Friend Event 7", "Friend Event 9"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,16 +55,16 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             }
         };
 //        UpcomingEventsListView
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, events);
-        mUpcomingEventsListView.setAdapter(adapter);
-
-        mUpcomingEventsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String event = ((TextView)view).getText().toString();
-                Toast.makeText(HomeActivity.this, event, Toast.LENGTH_LONG).show();
-            }
-        });
+//        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, events);
+//        mUpcomingEventsListView.setAdapter(adapter);
+//
+//        mUpcomingEventsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                String event = ((TextView)view).getText().toString();
+//                Toast.makeText(HomeActivity.this, event, Toast.LENGTH_LONG).show();
+//            }
+//        });
 
 //        CreateNewEventButton
         mNewEventButton.setOnClickListener(this);
